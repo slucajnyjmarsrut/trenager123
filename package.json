@@ -1,0 +1,27 @@
+{
+  "name": "jarvis-assistant",
+  "version": "2.0.0",
+  "description": "JARVIS — ИИ-ассистент для Windows: чат, голос, открытие вкладок и приложений",
+  "main": "main.js",
+  "author": "you",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^32.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "com.example.jarvis",
+    "productName": "JARVIS",
+    "files": ["main.js", "preload.js", "renderer/**/*"],
+    "win": { "target": "nsis" },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": false
+    }
+  }
+}
